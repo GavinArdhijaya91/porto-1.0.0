@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.cdnfonts.com/css/satoshi');
+
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #111118;
@@ -46,7 +47,8 @@ body::before {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  opacity: 0.15;
+  opacity: 0.12;
+  filter: blur(8px);
   z-index: -1;
   pointer-events: none;
 }

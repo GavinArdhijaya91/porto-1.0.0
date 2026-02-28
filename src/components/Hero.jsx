@@ -42,11 +42,9 @@ export default function Hero() {
 
     return (
         <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-            {/* Background blobs */}
             <div className="blob w-[500px] h-[500px] bg-accent/10 top-[-120px] left-[-120px]" />
             <div className="blob w-[350px] h-[350px] bg-accent-violet/10 bottom-0 right-0" style={{ animationDelay: '3s' }} />
 
-            {/* Grid overlay */}
             <div
                 className="absolute inset-0 opacity-[0.02] z-0"
                 style={{
@@ -56,27 +54,31 @@ export default function Hero() {
                 }}
             />
 
-            {/* Arctic Monkeys GIF Background Element */}
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] opacity-[0.1] pointer-events-none z-0">
+            <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] opacity-[0.06] pointer-events-none z-0"
+                style={{
+                    webkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%)',
+                    maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%)',
+                }}
+            >
                 <img
                     src="/artric-monkey.gif"
                     alt="Decorative Background"
-                    className="w-full h-full object-contain filter invert opacity-30"
+                    className="w-full h-full object-contain filter invert opacity-40"
                 />
             </div>
 
-            {/* ── Main layout: full width, padded ── */}
             <div className="relative z-10 w-full pt-24 pb-12 px-6 md:px-12 lg:px-20">
                 <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 max-w-[1300px] mx-auto">
 
-                    {/* ── LEFT: Text content ── */}
+
                     <motion.div
                         variants={container}
                         initial="hidden"
                         animate="show"
                         className="flex-1 flex flex-col items-start text-left"
                     >
-                        {/* Badge */}
+                    
                         <motion.div
                             variants={item}
                             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-accent bg-accent/5 text-accent-light text-xs font-medium mb-6"
@@ -85,32 +87,35 @@ export default function Hero() {
                             Available for opportunities
                         </motion.div>
 
-                        {/* Greeting */}
-                        <motion.p variants={item} className="text-text-muted text-lg font-medium mb-1">
+                       
+                        <motion.p
+                            variants={item}
+                            className="text-text-muted text-lg font-medium mb-1 font-sans"
+                        >
                             Hello, I'm
                         </motion.p>
 
-                        {/* Name */}
+                        
                         <motion.h1
                             variants={item}
-                            className="font-display font-extrabold leading-none mb-4"
+                            className="font-sans font-extrabold leading-none mb-4"
                             style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', letterSpacing: '-0.03em' }}
                         >
                             Gavin<br />
                             <span className="text-gradient">Ardhijaya</span>
                         </motion.h1>
 
-                        {/* Typing role */}
+                    
                         <motion.div
                             variants={item}
-                            className="flex items-center gap-2 text-lg md:text-xl text-text-soft font-medium mb-5 h-8"
+                            className="flex items-center gap-2 text-lg md:text-xl text-text-soft font-medium mb-5 h-8 font-sans"
                         >
                             <span className="text-accent-violet">I am a </span>
                             <span className="text-text-primary">{displayed}</span>
                             <span className="typing-cursor" />
                         </motion.div>
 
-                        {/* Bio */}
+                       
                         <motion.p
                             variants={item}
                             className="text-text-muted text-base leading-relaxed max-w-lg mb-9"
@@ -119,7 +124,7 @@ export default function Hero() {
                             experiences. I combine creativity with clean code to craft products that matter.
                         </motion.p>
 
-                        {/* CTAs */}
+                        
                         <motion.div variants={item} className="flex flex-wrap gap-4 mb-10">
                             <motion.button
                                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(99,102,241,0.4)' }}
@@ -139,7 +144,7 @@ export default function Hero() {
                             </motion.button>
                         </motion.div>
 
-                        {/* Social links */}
+                       
                         <motion.div variants={item} className="flex gap-3">
                             {[
                                 { href: 'https://github.com/gavinardhijaya', icon: <FiGithub size={20} />, label: 'GitHub' },
@@ -180,7 +185,7 @@ export default function Hero() {
                                     src="/Gavin-Photo-removebg-preview.png"
                                     alt="Gavin Ardhijaya"
                                     className="relative z-10 w-[280px] md:w-[340px] lg:w-[400px] xl:w-[440px] object-contain drop-shadow-2xl"
-                                    />
+                                />
                             </div>
                         </motion.div>
                     </motion.div>
