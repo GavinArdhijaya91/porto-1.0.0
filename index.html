@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavin's Portfolio</title>
+    <link rel="stylesheet" href="gaya.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    </style>
+</head>
+<body>
+   <svg style="display: none">
+  <filter id="glass-distortion">
+    <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+  </filter>
+</svg>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Portfolio.</div>
+            <div class="glass-filter"></div>
+            <div class="glass-overlay"></div>
+            <div class="glass-specular"></div>
+            <div class="glass-content">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- RUMAH -->
+    <section id="home" class="home">
+        <div class="typing-container">
+            <h1 class="typing-text" id="hello">Hello</h1>
+            <h1 class="typing-text" id="hello">I'm Gavin as A</h1>
+            <h2 class="typing-text" id="profession">
+                <span id="profession"></span>
+                <span class="typing-bar"></span>
+            </h2>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down" style="font-size: 2rem; animation: bounce 2s infinite;"></i>
+        </div>
+    </section>
+
+    <!-- TENTANG -->
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="Gavin-Photo-removebg-preview.png" alt="Gavin Profile" class="profile-img">
+            </div>
+            <div class="about-text">
+                <h3>Hi, I'm Gavin</h3>
+                <p class="about-p">Now, I'm a college student with a strong interest in the world of technology, particularly in Web Development, Software Engineering, Data Science, and Graphic Design. I have a great passion for learning new things, especially those related to technology and programming, as I believe that continuous learning is the key to growth in this rapidly evolving field.</p>
+
+                <p class="about-p">I have a clear vision and mission to use technology as a tool to help many people by solving real-world problems and making their daily lives easier and more efficient. Through my skills and knowledge, I aim to create impactful and meaningful solutions that can bring positive change to society.</p>
+
+                <p class="about-p">In addition, I enjoy exploring creative ideas and turning them into practical and useful products. I actively develop projects ranging from small-scale mini projects to larger and more complex applications as a way to sharpen my skills, gain hands-on experience, and continuously improve myself. I believe that by combining creativity, logic, and technology, I can contribute something valuable to the digital world.</p>
+                <div class="skills">
+                <h4>Skills</h4>
+                <div class="skill-grid">
+
+                <div class="skill-column">
+                    <img src="https://img.icons8.com/color/48/html-5.png" class="skill-icon" alt="HTML">
+                    <span class="skill-name">HTML</span>
+                    <div class="skill-bar-vertical">
+                    <div class="skill-level" data-level="90"></div>
+                    </div>
+                    <span class="skill-percent">90%</span>
+                    </div>
+
+                    <div class="skill-column">
+                    <img src="https://img.icons8.com/color/48/css3.png" class="skill-icon" alt="CSS">
+                    <span class="skill-name">CSS</span>
+                    <div class="skill-bar-vertical">
+                    <div class="skill-level" data-level="85"></div>
+                    </div>
+                    <span class="skill-percent">85%</span>
+                </div>
+
+    
+                <div class="skill-column">
+                <img src="https://img.icons8.com/color/48/javascript.png" class="skill-icon" alt="JavaScript">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar-vertical">
+                <div class="skill-level" data-level="80"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+                </div>
+
+    
+                <div class="skill-column">
+                <img src="https://img.icons8.com/color/48/react-native.png" class="skill-icon" alt="React">
+                <span class="skill-name">React</span>
+                <div class="skill-bar-vertical">
+                <div class="skill-level" data-level="70"></div>
+                </div>
+                <span class="skill-percent">70%</span>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGALAMAN -->
+    <section id="experience" class="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="swiper project-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div class="project-img1"></div>
+                        <h3>Shop</h3>
+                        <p class="project-p">Make a personal shop website called Martabak Kuy so that buyers can order food without having to go to the shop first.</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                            <span class="tag">HTML/CSS/JS</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div class="project-img2"></div>
+                        <h3>Medical Web</h3>
+                        <p class="project-p">Make a medical website that can monitoring patient recognition results with any device and can be monitored remotely.</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                            <span class="tag">HTML/CSS/JS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div class="project-img3"></div>
+                        <h3>Personal Portfolio</h3>
+                        <p class="project-p">Make a portfolio website with smooth animation and responsive design.</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                            <span class="tag">HTML/CSS/JS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <div class="project-img3"></div>
+                        <h3>Personal Portfolio</h3>
+                        <p class="project-p">Make a portfolio website with smooth animation and responsive design.</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                            <span class="tag">HTML/CSS/JS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section id="contact" class="contact" >
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="https://wa.me/6289523774286" target="_blank" class="social-btn whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://instagram.com/gavin.ardhijaya" target="_blank" class="social-btn instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/in/gavinardhijaya1" target="_blank" class="social-btn linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <footer>
+            Gavin's 2025 Portfolio | All Rights Reserved.
+        </footer>
+    </section>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="skrip.js">
+    </script>
+</body>
+</html>
