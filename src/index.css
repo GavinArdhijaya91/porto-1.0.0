@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #111118;
@@ -31,12 +30,27 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/Dark mode wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -136,7 +150,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, sans-serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 700;
   margin-bottom: 16px;
