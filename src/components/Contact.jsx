@@ -22,7 +22,7 @@ export default function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setSending(true)
-        // Simulate sending — replace with your actual email service (EmailJS, Formspree, etc.)
+
         await new Promise(r => setTimeout(r, 1500))
         setSending(false)
         setSent(true)

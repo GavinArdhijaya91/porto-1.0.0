@@ -1,7 +1,7 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.cdnfonts.com/css/satoshi');
 
 :root {
   --bg-primary: #0a0a0f;
@@ -103,9 +103,21 @@ body::before {
   }
 
   .container-custom {
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 24px;
+  }
+
+  @media (min-width: 768px) {
+    .container-custom {
+      padding: 0 48px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding: 0 80px;
+    }
   }
 
   .glow-text {
@@ -191,7 +203,7 @@ body::before {
   width: 3px;
   height: 1em;
   background: var(--accent);
-  margin-left: 4px;
+  margin-left: 0;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
 }

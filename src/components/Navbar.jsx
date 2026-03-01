@@ -5,6 +5,7 @@ import { HiMenuAlt3, HiX } from 'react-icons/hi'
 const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
     { label: 'Contact', href: '#contact' },
 ]
@@ -65,8 +66,8 @@ export default function Navbar() {
                                     <button
                                         onClick={() => handleLinkClick(link.href)}
                                         className={`text-sm font-medium transition-colors duration-200 relative group ${activeSection === link.href.slice(1)
-                                                ? 'text-accent-light'
-                                                : 'text-text-soft hover:text-text-primary'
+                                            ? 'text-accent-light'
+                                            : 'text-text-soft hover:text-text-primary'
                                             }`}
                                     >
                                         {link.label}
@@ -77,9 +78,9 @@ export default function Navbar() {
                             ))}
                         </ul>
 
-                        {/* CTA button desktop */}
+                        {/* CV nya mana woii */}
                         <motion.a
-                            href="/Gavin_CV.pdf"
+                            href="/CV4_HieronimusGavinArdhijaya.pdf"
                             target="_blank"
                             rel="noreferrer"
                             whileHover={{ scale: 1.05 }}
@@ -127,7 +128,7 @@ export default function Navbar() {
                                 </motion.button>
                             ))}
                             <a
-                                href="/Gavin_CV.pdf"
+                                href="/CV4_HieronimusGavinjArdhijaya.pdf"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="w-fit px-4 py-2 rounded-lg border border-border-accent text-accent-light text-sm font-medium mt-2"

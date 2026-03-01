@@ -4,7 +4,7 @@ import { HiArrowDown } from 'react-icons/hi'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { BsWhatsapp, BsInstagram } from 'react-icons/bs'
 
-const roles = ['Web Developer', 'UI/UX Enthusiast', 'Software Engineer', 'Creative Coder']
+const roles = ['Web Developer', 'UI/UX Enthusiast', 'Software Engineer', 'Graphic Designer', 'Content Writer', 'Data Scientist']
 
 export default function Hero() {
     const [currentRole, setCurrentRole] = useState(0)
@@ -61,15 +61,18 @@ export default function Hero() {
                     maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%)',
                 }}
             >
-                <img
-                    src="/artric-monkey.gif"
-                    alt="Decorative Background"
-                    className="w-full h-full object-contain filter invert opacity-40"
+                <video
+                    src="/star_videoframe.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-[900px] h-[550px] object-cover opacity-170"
                 />
             </div>
 
-            <div className="relative z-10 w-full pt-24 pb-12 px-6 md:px-12 lg:px-20">
-                <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 max-w-[1300px] mx-auto">
+            <div className="relative z-10 w-full pt-16 pb-12 mt-16 md:mt-20 container-custom">
+                <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 mx-auto">
 
 
                     <motion.div
@@ -78,7 +81,7 @@ export default function Hero() {
                         animate="show"
                         className="flex-1 flex flex-col items-start text-left"
                     >
-                    
+
                         <motion.div
                             variants={item}
                             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-accent bg-accent/5 text-accent-light text-xs font-medium mb-6"
@@ -87,15 +90,15 @@ export default function Hero() {
                             Available for opportunities
                         </motion.div>
 
-                       
+
                         <motion.p
                             variants={item}
-                            className="text-text-muted text-lg font-medium mb-1 font-sans"
+                            className="text-text-muted text-lg font-medium mb-2 ml-1 inline-flex font-sans"
                         >
                             Hello, I'm
                         </motion.p>
 
-                        
+
                         <motion.h1
                             variants={item}
                             className="font-sans font-extrabold leading-none mb-4"
@@ -105,17 +108,19 @@ export default function Hero() {
                             <span className="text-gradient">Ardhijaya</span>
                         </motion.h1>
 
-                    
+
                         <motion.div
                             variants={item}
                             className="flex items-center gap-2 text-lg md:text-xl text-text-soft font-medium mb-5 h-8 font-sans"
                         >
                             <span className="text-accent-violet">I am a </span>
-                            <span className="text-text-primary">{displayed}</span>
-                            <span className="typing-cursor" />
+                            <span className="text-text-primary flex items-center">{displayed}
+                                <span className="typing-cursor" />
+                            </span>
+
                         </motion.div>
 
-                       
+
                         <motion.p
                             variants={item}
                             className="text-text-muted text-base leading-relaxed max-w-lg mb-9"
@@ -124,7 +129,7 @@ export default function Hero() {
                             experiences. I combine creativity with clean code to craft products that matter.
                         </motion.p>
 
-                        
+
                         <motion.div variants={item} className="flex flex-wrap gap-4 mb-10">
                             <motion.button
                                 whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(99,102,241,0.4)' }}
@@ -144,7 +149,7 @@ export default function Hero() {
                             </motion.button>
                         </motion.div>
 
-                       
+
                         <motion.div variants={item} className="flex gap-3">
                             {[
                                 { href: 'https://github.com/gavinardhijaya', icon: <FiGithub size={20} />, label: 'GitHub' },

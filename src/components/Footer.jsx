@@ -5,10 +5,6 @@ export default function Footer() {
     return (
         <footer className="border-t border-border-dark py-8">
             <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="font-display font-bold text-lg">
-                    <span className="text-gradient">Portfolio</span>
-                    <span className="text-accent">.</span>
-                </div>
                 <p className="text-text-muted text-sm text-center">
                     © {year} Gavin Ardhijaya Production.
                 </p>

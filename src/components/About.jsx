@@ -1,27 +1,49 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useRef, useEffect } from 'react'
+import { motion, useInView, useSpring, useTransform } from 'framer-motion'
 import {
     SiHtml5, SiCss3, SiJavascript, SiReact, SiTailwindcss,
     SiNodedotjs, SiPhp, SiLaravel, SiMysql, SiFigma,
     SiGit, SiPython
 } from 'react-icons/si'
 
-const skills = [
-    { name: 'HTML5', icon: <SiHtml5 />, level: 90, color: '#e34f26' },
-    { name: 'CSS3', icon: <SiCss3 />, level: 85, color: '#1572b6' },
-    { name: 'JavaScript', icon: <SiJavascript />, level: 80, color: '#f7df1e' },
-    { name: 'React', icon: <SiReact />, level: 72, color: '#61dafb' },
-    { name: 'Tailwind', icon: <SiTailwindcss />, level: 78, color: '#38bdf8' },
-    { name: 'Node.js', icon: <SiNodedotjs />, level: 65, color: '#339933' },
-    { name: 'PHP', icon: <SiPhp />, level: 70, color: '#777bb4' },
-    { name: 'Laravel', icon: <SiLaravel />, level: 65, color: '#ff2d20' },
-    { name: 'MySQL', icon: <SiMysql />, level: 70, color: '#4479a1' },
-    { name: 'Python', icon: <SiPython />, level: 60, color: '#3776ab' },
-    { name: 'Figma', icon: <SiFigma />, level: 68, color: '#f24e1e' },
-    { name: 'Git', icon: <SiGit />, level: 75, color: '#f05032' },
-]
+const skills =
+    [
+        { name: 'HTML5', icon: <SiHtml5 />, level: 90, color: '#e34f26' },
+        { name: 'CSS3', icon: <SiCss3 />, level: 85, color: '#1572b6' },
+        { name: 'JavaScript', icon: <SiJavascript />, level: 80, color: '#f7df1e' },
+        { name: 'React', icon: <SiReact />, level: 72, color: '#61dafb' },
+        { name: 'Tailwind', icon: <SiTailwindcss />, level: 78, color: '#38bdf8' },
+        { name: 'Node.js', icon: <SiNodedotjs />, level: 65, color: '#339933' },
+        { name: 'PHP', icon: <SiPhp />, level: 70, color: '#777bb4' },
+        { name: 'Laravel', icon: <SiLaravel />, level: 65, color: '#ff2d20' },
+        { name: 'MySQL', icon: <SiMysql />, level: 70, color: '#4479a1' },
+        { name: 'Python', icon: <SiPython />, level: 60, color: '#3776ab' },
+        { name: 'Figma', icon: <SiFigma />, level: 68, color: '#f24e1e' },
+    ]
+
+function Counter({ from, to, suffix = '' }) {
+    const ref = useRef(null)
+    const inView = useInView(ref, { once: true, margin: '-50px' })
+
+    const count = useSpring(from, {
+        stiffness: 40,
+        damping: 15,
+        restDelta: 0.001
+    })
+
+    const displayCount = useTransform(count, (latest) => Math.floor(latest) + suffix)
+
+    useEffect(() => {
+        if (inView) {
+            count.set(to)
+        }
+    }, [inView, to, count])
+
+    return <motion.span ref={ref}>{displayCount}</motion.span>
+}
 
 function SkillBar({ skill, index }) {
+
     const ref = useRef(null)
     const inView = useInView(ref, { once: true, margin: '-50px' })
 
@@ -39,7 +61,7 @@ function SkillBar({ skill, index }) {
             <div className="flex-1">
                 <div className="flex justify-between text-xs text-text-muted mb-1">
                     <span className="font-medium text-text-soft">{skill.name}</span>
-                    <span>{skill.level}%</span>
+                    <span><Counter from={0} to={skill.level} suffix="%" /></span>
                 </div>
                 <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                     <motion.div
@@ -70,8 +92,28 @@ export default function About() {
 
     return (
         <section id="about" className="section-padding relative overflow-hidden">
+
             {/* Background glow */}
-            <div className="blob w-[600px] h-[300px] bg-accent/5 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2" />
+            <div className="blob w-[600px] h-[300px] -translate-x-1/2 -translate-y-1/2"
+                style=
+                {{
+                    backgroundImage: 'url(dark_wallpaper.png)',
+                    opacity: 0.6,
+                    width: 780,
+                    height: 920,
+                    backgroundSize: 'cover',
+                }} />
+
+            {/* Video Animasi Garis (biar keren aja :v) */}
+            <video
+                src="/line_animation.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none z-0"
+                style={{ mixBlendMode: 'screen', opacity: 0.3 }}
+            />
 
             <div className="container-custom relative z-10" ref={ref}>
                 {/* Section header */}
@@ -87,11 +129,12 @@ export default function About() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    {/* Left: Bio */}
+                
                     <motion.div variants={container} initial="hidden" animate={inView ? 'show' : 'hidden'}>
+
                         {/* Photo on mobile */}
                         <motion.div variants={fadeUp} className="flex justify-center mb-8 lg:hidden">
-                            <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-border-accent">
+                            <div className="relative w-48 h-48 rounded-2xl overflow-hidden">
                                 <img src="/Gavin-Photo-removebg-preview.png" alt="Gavin" className="w-full h-full object-cover object-top" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/50 to-transparent" />
                             </div>
@@ -114,12 +157,14 @@ export default function About() {
                         {/* Stats */}
                         <motion.div variants={fadeUp} className="grid grid-cols-3 gap-4">
                             {[
-                                { value: '3+', label: 'Projects Done' },
-                                { value: '2+', label: 'Years Coding' },
-                                { value: '10+', label: 'Tech Stacks' },
+                                { value: 2, suffix: '+', label: 'Projects Done' },
+                                { value: 1, suffix: '+', label: 'Years Coding' },
+                                { value: 5, suffix: '+', label: 'Tech Stacks' },
                             ].map((stat) => (
                                 <div key={stat.label} className="bg-bg-card rounded-xl p-4 border border-border-dark text-center">
-                                    <div className="font-display font-bold text-2xl text-gradient">{stat.value}</div>
+                                    <div className="font-display font-bold text-2xl text-gradient">
+                                        <Counter from={0} to={stat.value} suffix={stat.suffix} />
+                                    </div>
                                     <div className="text-text-muted text-xs mt-1">{stat.label}</div>
                                 </div>
                             ))}
