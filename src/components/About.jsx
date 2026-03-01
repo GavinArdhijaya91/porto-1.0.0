@@ -129,16 +129,9 @@ export default function About() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
+
                     <motion.div variants={container} initial="hidden" animate={inView ? 'show' : 'hidden'}>
 
-                        {/* Photo on mobile */}
-                        <motion.div variants={fadeUp} className="flex justify-center mb-8 lg:hidden">
-                            <div className="relative w-48 h-48 rounded-2xl overflow-hidden">
-                                <img src="/Gavin-Photo-removebg-preview.png" alt="Gavin" className="w-full h-full object-cover object-top" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/50 to-transparent" />
-                            </div>
-                        </motion.div>
 
                         <motion.h3 variants={fadeUp} className="font-display font-bold text-2xl mb-4">
                             Hi, I'm <span className="text-gradient">Gavin 👋</span>
