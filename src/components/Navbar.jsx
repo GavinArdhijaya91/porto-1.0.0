@@ -19,7 +19,7 @@ export default function Navbar() {
         const handleScroll = () => {
             setScrolled(window.scrollY > 30)
 
-            const sections = ['home', 'about', 'projects', 'contact']
+            const sections = ['home', 'about', 'experience', 'projects', 'contact']
             const current = sections.find(id => {
                 const el = document.getElementById(id)
                 if (!el) return false
@@ -71,8 +71,7 @@ export default function Navbar() {
                                             }`}
                                     >
                                         {link.label}
-                                        <span className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-200 ${activeSection === link.href.slice(1) ? 'w-full' : 'w-0 group-hover:w-full'
-                                            }`} />
+                                        <span className={`nav-link-line ${activeSection === link.href.slice(1) ? 'nav-link-active' : ''}`} />
                                     </button>
                                 </li>
                             ))}
