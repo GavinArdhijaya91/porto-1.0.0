@@ -41,7 +41,7 @@ export default function Hero() {
     }
 
     return (
-        <section id="home" className="relative min-h-[100dvh] flex items-start md:items-center overflow-hidden pt-28 md:pt-0">
+        <section id="home" className="relative min-h-[100dvh] flex items-start md:items-center overflow-hidden pt-36 md:pt-0">
             <div className="blob w-[500px] h-[500px] bg-accent/10 top-[-120px] left-[-120px]" />
             <div className="blob w-[350px] h-[350px] bg-accent-violet/10 bottom-0 right-0" style={{ animationDelay: '3s' }} />
 
@@ -71,7 +71,7 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="relative z-10 w-full pt-12 pb-12 md:mt-24 container-custom">
+            <div className="relative z-10 w-full pt-16 pb-16 md:mt-24 container-custom">
                 <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 mx-auto">
 
 
