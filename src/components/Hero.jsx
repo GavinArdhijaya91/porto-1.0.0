@@ -41,7 +41,7 @@ export default function Hero() {
     }
 
     return (
-        <section id="home" className="relative min-h-[100dvh] flex items-start md:items-center overflow-hidden pt-36 md:pt-0">
+        <section id="home" className="relative min-h-[100dvh] flex items-start md:items-center overflow-hidden pt-40 md:pt-0">
             <div className="blob w-[500px] h-[500px] bg-accent/10 top-[-120px] left-[-120px]" />
             <div className="blob w-[350px] h-[350px] bg-accent-violet/10 bottom-0 right-0" style={{ animationDelay: '3s' }} />
 
