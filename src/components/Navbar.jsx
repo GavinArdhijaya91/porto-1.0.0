@@ -17,36 +17,33 @@ export default function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 30)
-
+            const scrollY = window.scrollY
+            setScrolled(scrollY > 30)
             const sections = ['home', 'about', 'experience', 'projects', 'contact']
-            const scrollPosition = window.scrollY + 150
- 
-            if (window.scrollY < 100) {
+
+            if (scrollY < 100) {
                 setActiveSection('home')
                 return
             }
 
-            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+            if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 50) {
                 setActiveSection('contact')
                 return
             }
 
-            for (const section of sections) {
-                const element = document.getElementById(section)
+            for (const id of sections) {
+                const element = document.getElementById(id)
                 if (element) {
-                    const offsetTop = element.offsetTop
-                    const offsetHeight = element.offsetHeight
-
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section)
+                    const rect = element.getBoundingClientRect()
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        setActiveSection(id)
                         break
                     }
                 }
             }
         }
         window.addEventListener('scroll', handleScroll)
-        handleScroll() 
+        handleScroll()
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
