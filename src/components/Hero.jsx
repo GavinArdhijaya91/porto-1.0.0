@@ -41,7 +41,7 @@ export default function Hero() {
     }
 
     return (
-        <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+        <section id="home" className="relative min-h-[100dvh] flex items-start md:items-center overflow-hidden">
             <div className="blob w-[500px] h-[500px] bg-accent/10 top-[-120px] left-[-120px]" />
             <div className="blob w-[350px] h-[350px] bg-accent-violet/10 bottom-0 right-0" style={{ animationDelay: '3s' }} />
 
@@ -71,7 +71,7 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="relative z-10 w-full pt-16 pb-12 mt-16 md:mt-20 container-custom">
+            <div className="relative z-10 w-full pt-32 md:pt-20 pb-12 mt-8 md:mt-24 container-custom">
                 <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 mx-auto">
 
 
@@ -79,7 +79,7 @@ export default function Hero() {
                         variants={container}
                         initial="hidden"
                         animate="show"
-                        className="flex-1 flex flex-col items-start text-left"
+                        className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left"
                     >
 
                         <motion.div
@@ -102,7 +102,7 @@ export default function Hero() {
                         <motion.h1
                             variants={item}
                             className="font-sans font-extrabold leading-none mb-4"
-                            style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)', letterSpacing: '-0.03em' }}
+                            style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', letterSpacing: '-0.03em' }}
                         >
                             Gavin<br />
                             <span className="text-gradient">Ardhijaya</span>
@@ -177,7 +177,7 @@ export default function Hero() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
-                        className="flex-shrink-0 flex justify-end"
+                        className="flex-shrink-0 flex justify-center lg:justify-end mt-12 lg:mt-0"
                     >
                         <motion.div
                             animate={{ y: [0, -16, 0] }}

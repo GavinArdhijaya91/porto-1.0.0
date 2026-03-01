@@ -44,12 +44,12 @@ export default function Navbar() {
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-glass-nav shadow-lg shadow-black/20' : 'bg-transparent'
+                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || menuOpen ? 'bg-glass-nav shadow-lg shadow-black/20' : 'bg-transparent md:bg-transparent bg-glass-nav'
                     }`}
             >
                 <div className="container-custom">
                     <div className="flex items-center justify-between h-[72px]">
-                       
+
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             className="font-display font-bold text-xl cursor-pointer"
@@ -59,7 +59,7 @@ export default function Navbar() {
                             <span className="text-accent">.</span>
                         </motion.div>
 
-                        
+
                         <ul className="hidden md:flex items-center gap-8">
                             {navLinks.map((link) => (
                                 <li key={link.href}>

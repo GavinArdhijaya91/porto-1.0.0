@@ -77,28 +77,28 @@ function PolaroidCard({ exp, index }) {
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/40 backdrop-blur-sm transform -rotate-2 z-10 hidden"></div>
 
                 <div className="bg-gray-100 w-full h-40 mb-4 flex items-center justify-center p-4 rounded-sm border border-gray-300 shadow-inner overflow-hidden relative"
-                style={{ backgroundImage: `url(${exp.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+                    style={{ backgroundImage: `url(${exp.src})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                     <div className="text-center z-10 relative">
                         <h3 className="text-xl mb-1 font-bold"
                             style=
                             {{
-                              textShadow: '1px 1px 5px rgba(0, 0, 0, 1)',
-                              fontFamily: 'Inter',
-                              backgroundColor: 'rgba(192, 45, 52, 1)',
-                              padding: '5px',
-                              color: 'white',
-                              filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 1))'
+                                textShadow: '1px 1px 5px rgba(0, 0, 0, 1)',
+                                fontFamily: 'Inter',
+                                backgroundColor: 'rgba(192, 45, 52, 1)',
+                                padding: '5px',
+                                color: 'white',
+                                filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 1))'
                             }}>{exp.role}</h3>
 
                         <p className="text-sm font-bold"
-                           style=
-                           {{
-                            color: 'white',
-                            textShadow: '1px 1px 5px rgba(0, 0, 0, 1)',
-                            fontFamily: 'Inter',
-                            backgroundColor: 'rgba(192, 45, 52, 1)',
-                            padding: '2px',
-                            filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 1))'
+                            style=
+                            {{
+                                color: 'white',
+                                textShadow: '1px 1px 5px rgba(0, 0, 0, 1)',
+                                fontFamily: 'Inter',
+                                backgroundColor: 'rgba(192, 45, 52, 1)',
+                                padding: '2px',
+                                filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 1))'
                             }}>{exp.company}</p>
 
                     </div>
@@ -112,7 +112,7 @@ function PolaroidCard({ exp, index }) {
                         <span className="text-red-700 font-bold text-xs transform -rotate-2 inline-block px-2 py-1 border-2 border-red-700 rounded-md opacity-80" style={{ fontFamily: 'Courier, monospace' }}>
                             {exp.period}
                         </span>
-                        <span className={`px-2 py-0.5 rounded-sm text-[10px] uppercase font-bold tracking-wider ${exp.type === 'work' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
+                        <span className={`px-2 py-0.5 rounded-sm text-[10px] uppercase font-bold tracking-wider ${exp.type === 'Volunteer' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
                             }`}>
                             {exp.type}
                         </span>
@@ -172,7 +172,7 @@ export default function Experience() {
                     </div>
                 </motion.div>
 
-                <div className="relative max-w-5xl mx-auto flex flex-col md:gap-8 px-4 py-10">
+                <div className="relative max-w-5xl mx-auto flex flex-col gap-16 md:gap-8 px-4 py-10">
 
                     <div className="absolute left-[15%] md:left-1/2 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-red-600/50 -translate-x-1/2 z-0" />
 
