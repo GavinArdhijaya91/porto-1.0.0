@@ -7,7 +7,7 @@ const socials = [
     { label: 'WhatsApp', icon: <BsWhatsapp size={20} />, href: 'https://wa.me/6289523774286', color: '#25d366' },
     { label: 'Instagram', icon: <BsInstagram size={20} />, href: 'https://instagram.com/gavin.ardhijaya', color: '#e1306c' },
     { label: 'LinkedIn', icon: <FiLinkedin size={20} />, href: 'https://linkedin.com/in/gavinardhijaya1', color: '#0077b5' },
-    { label: 'Email', icon: <BsEnvelope size={20} />, href: 'mailto:gavinardhijaya@gmail.com', color: '#6366f1' },
+    { label: 'Email', icon: <BsEnvelope size={20} />, href: 'mailto:gavin.ardhijaya@gmail.com', color: '#6366f1' },
 ]
 
 export default function Contact() {
@@ -40,7 +40,7 @@ export default function Contact() {
             <div className="blob w-[500px] h-[300px] bg-accent/8 bottom-0 left-1/2 -translate-x-1/2" />
 
             <div className="container-custom relative z-10" ref={ref}>
-                {/* Header */}
+              
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -55,7 +55,7 @@ export default function Contact() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Left: Social + info */}
+                    {/* Medsos bagian Kiri */}
                     <motion.div
                         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
                         initial="hidden"
@@ -92,7 +92,7 @@ export default function Contact() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Right: Form */}
+                    {/* Formulir bagian Kanan */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}

@@ -49,7 +49,7 @@ export default function Navbar() {
             >
                 <div className="container-custom">
                     <div className="flex items-center justify-between h-[72px]">
-                        {/* Logo */}
+                       
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             className="font-display font-bold text-xl cursor-pointer"
@@ -59,7 +59,7 @@ export default function Navbar() {
                             <span className="text-accent">.</span>
                         </motion.div>
 
-                        {/* Desktop nav */}
+                        
                         <ul className="hidden md:flex items-center gap-8">
                             {navLinks.map((link) => (
                                 <li key={link.href}>
@@ -90,7 +90,7 @@ export default function Navbar() {
                             Download CV
                         </motion.a>
 
-                        {/* Hamburger mobile */}
+                        {/* Hamburger */}
                         <motion.button
                             whileTap={{ scale: 0.9 }}
                             className="md:hidden text-text-primary p-2"
@@ -103,7 +103,7 @@ export default function Navbar() {
                 </div>
             </motion.nav>
 
-            {/* Mobile menu */}
+            {/* Versi Mobile */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div

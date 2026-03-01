@@ -91,7 +91,7 @@ function ProjectCard({ item, index, isCertificate }) {
             }}
         >
 
-            {/* Featured badge / Certificate Info */}
+        
             {!isCertificate ? (
                 item.featured && (
                     <div className="absolute top-3 right-3 z-10 px-2 py-0.5 rounded-full bg-accent/20 border border-border-accent text-accent-light text-xs font-medium">
@@ -104,7 +104,7 @@ function ProjectCard({ item, index, isCertificate }) {
                 </div>
             )}
 
-            {/* Image */}
+            
             <div className="relative h-48 overflow-hidden bg-bg-secondary">
                 <img
                     src={item.image}
@@ -113,7 +113,7 @@ function ProjectCard({ item, index, isCertificate }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent" />
 
-                {/* Hover overlay links */}
+                
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: hovered ? 1 : 0 }}
@@ -160,7 +160,7 @@ function ProjectCard({ item, index, isCertificate }) {
                 </motion.div>
             </div>
 
-            {/* Content */}
+           
             <div className="p-5">
                 <h3 className="font-display font-semibold text-lg text-text-primary mb-2 group-hover:text-accent-light transition-colors line-clamp-1">
                     {item.title}
@@ -196,7 +196,7 @@ export default function Projects() {
 
     return (
         <section id="projects" className="section-padding relative overflow-hidden">
-            {/* Background Texture */}
+            
             <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-0"
                 style={{
@@ -300,7 +300,7 @@ export default function Projects() {
                     ))}
                 </div>
 
-                {/* Grid Content */}
+                
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeTab}
