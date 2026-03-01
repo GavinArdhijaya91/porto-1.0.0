@@ -8,16 +8,29 @@ const experiences = [
         period: 'Des 2025 - Present',
         description: 'Developed and maintained the organizations web platform, including an admin dashboard, event management system, and article CMS.',
         type: 'Organization',
+        src: '/Landing_Pages_YRI.png',
         rotation: '-rotate-2',
         yOffset: '0px',
     },
+
+    {
+        company: 'Lestra Vida',
+        role: 'Volunteer Staff',
+        period: '8 February 2026',
+        description: 'Developed and maintained the organizations web platform, including an admin dashboard, event management system, and article CMS.',
+        type: 'Volunteer',
+        src: '/Lestra_Vida.jpg',
+        rotation: 'rotate-3',
+        yOffset: '0px',
+    },
+
     {
         company: 'Pagelaran Tari Seni Budaya',
         role: 'Event Organizer',
         period: 'Nov 2024 - Feb 2025',
         description: 'Participated in community outreach programs and assisted in organizing local events for youth empowerment.',
-        type: 'Volunteer',
-        rotation: 'rotate-3',
+        type: 'Organization',
+        rotation: '-rotate-3',
         yOffset: '40px',
     },
 ]
@@ -61,12 +74,33 @@ function PolaroidCard({ exp, index }) {
                     <div className="w-1 h-3 bg-gray-400 absolute top-3 left-1/2 -translate-x-1/2 -z-10" style={{ transform: 'rotate(-15deg)' }}></div>
                 </div>
 
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/40 backdrop-blur-sm transform -rotate-2 z-10 hidden" style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}></div>
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/40 backdrop-blur-sm transform -rotate-2 z-10 hidden"></div>
 
-                <div className="bg-gray-100 w-full h-40 mb-4 flex items-center justify-center p-4 rounded-sm border border-gray-300 shadow-inner overflow-hidden relative">
+                <div className="bg-gray-100 w-full h-40 mb-4 flex items-center justify-center p-4 rounded-sm border border-gray-300 shadow-inner overflow-hidden relative"
+                style={{ backgroundImage: `url(${exp.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
                     <div className="text-center z-10 relative">
-                        <h3 className="text-xl font-bold text-gray-800 mb-1 font-display" style={{ textShadow: '1px 1px 0px rgba(255,255,255,0.7)' }}>{exp.role}</h3>
-                        <p className="text-sm text-gray-600 font-medium">{exp.company}</p>
+                        <h3 className="text-xl mb-1 font-bold"
+                            style=
+                            {{
+                              textShadow: '1px 1px 5px rgba(0, 0, 0, 1)',
+                              fontFamily: 'Inter',
+                              backgroundColor: 'rgba(192, 45, 52, 1)',
+                              padding: '5px',
+                              color: 'white',
+                              filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 1))'
+                            }}>{exp.role}</h3>
+
+                        <p className="text-sm font-bold"
+                           style=
+                           {{
+                            color: 'white',
+                            textShadow: '1px 1px 5px rgba(0, 0, 0, 1)',
+                            fontFamily: 'Inter',
+                            backgroundColor: 'rgba(192, 45, 52, 1)',
+                            padding: '2px',
+                            filter: 'drop-shadow(0 0 5px rgba(0, 0, 0, 1))'
+                            }}>{exp.company}</p>
+
                     </div>
                 </div>
 
@@ -102,7 +136,16 @@ export default function Experience() {
                 style={{
                     backgroundImage: 'url(/blue_texture.png)',
                     backgroundSize: 'cover',
-                    filter: 'contrast(1.5) grayscale(100%)',
+                    mixBlendMode: 'overlay',
+                }}
+            />
+
+            <div
+                className="absolute inset-0 opacity-[0.03] pointer-events-none z-0"
+                style={{
+                    backgroundImage:
+                        'linear-gradient(rgba(187, 180, 255, 0.81) 1px, transparent 1px), linear-gradient(90deg, rgba(97, 122, 236, 0.5) 1px, transparent 1px)',
+                    backgroundSize: '50px 50px',
                 }}
             />
 
@@ -125,7 +168,7 @@ export default function Experience() {
                         <div className="absolute -top-3 -left-4 w-12 h-6 bg-yellow-100/50 rotate-45 backdrop-blur-sm shadow-sm"></div>
                         <div className="absolute -bottom-3 -right-4 w-12 h-6 bg-yellow-100/50 rotate-45 backdrop-blur-sm shadow-sm"></div>
 
-                        <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-widest" style={{ fontFamily: 'Courier, monospace' }}>Struktur Organisasi & Pengalaman</h2>
+                        <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-widest" style={{ fontFamily: 'Courier, monospace' }}>Experience</h2>
                     </div>
                 </motion.div>
 
