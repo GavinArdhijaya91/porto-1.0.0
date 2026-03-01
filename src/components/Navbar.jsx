@@ -20,15 +20,33 @@ export default function Navbar() {
             setScrolled(window.scrollY > 30)
 
             const sections = ['home', 'about', 'experience', 'projects', 'contact']
-            const current = sections.find(id => {
-                const el = document.getElementById(id)
-                if (!el) return false
-                const rect = el.getBoundingClientRect()
-                return rect.top <= 100 && rect.bottom >= 100
-            })
-            if (current) setActiveSection(current)
+            const scrollPosition = window.scrollY + 150
+ 
+            if (window.scrollY < 100) {
+                setActiveSection('home')
+                return
+            }
+
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+                setActiveSection('contact')
+                return
+            }
+
+            for (const section of sections) {
+                const element = document.getElementById(section)
+                if (element) {
+                    const offsetTop = element.offsetTop
+                    const offsetHeight = element.offsetHeight
+
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(section)
+                        break
+                    }
+                }
+            }
         }
         window.addEventListener('scroll', handleScroll)
+        handleScroll() 
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
